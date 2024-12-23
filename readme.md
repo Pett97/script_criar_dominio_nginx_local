@@ -1,25 +1,47 @@
-**instalar o nginx**
+# Script de Criação de Domínios Simples  Locais para Nginx
+
+## Descrição
+
+Este script cria domínios locais configurados para o Nginx, criando automaticamente as páginas de erro e diretórios necessários basicos .
+
+## Pré-requisitos
+
+Antes de executar o script, certifique-se de que você tem o Nginx instalado e o Apache2 parado (caso esteja usando):
+
+### Instalar o Nginx
+
+```bash
 sudo apt-get install nginx
 
-**parar o apache2**
-sudo systemctl stop apache2
+### NOTA
+esse script não configura nada no arquivo nginx.conf caso necessário editar manualmente
 
-**como Executar**
-no diretorio onde foi clonado
+### Como Executar
 
-**habilitar a execucao**
-sudo chmod +x criar_dominio_nginx.sh 
+sudo chmod +x criar_dominio_nginx.sh
 
-**executar**
-sudo ./criar_dominio_nginx.sh 
+### Executar 
+sudo ./criar_dominio_nginx.sh
 
-**Esse Script ira criar dominios locais do nginx**
+### Funcionalidades do Script
+Cria diretórios para o domínio especificado
+  /var/www/{dominio}/html
+  /var/www/{dominio}/status-pages
+  /var/www/{dominio}/logs
+  /var/www/{dominio}/maintenance
 
-**Paginas criadas**
-index.html
-erro404
-erro503
+Cria páginas HTML:
+index.html (Página inicial)
+404.html (Página de erro 404)
+503.html (Página de manutenção 503) 
+
+Configura o Nginx para o domínio especificado
+Adiciona o domínio ao arquivo /etc/hosts
+Testa a configuração do Nginx e recarrega o serviço
+
+### Paginas Criadas
+index.html: Página de boas-vindas
+404.html: Página de erro 404
+503.html: Página de manutenção 503
 
 
-**Esse script não atleta o arquivo nginx.conf**
-caso nessario tem alterar o mesmo manualmente

@@ -20,6 +20,9 @@ esse script não configura nada no arquivo nginx.conf caso necessário editar ma
 
 sudo chmod +x criar_dominio_nginx.sh
 
+### video como executar 
+https://www.youtube.com/watch?v=VAO8XvVEP4c
+
 ### Executar 
 sudo ./criar_dominio_nginx.sh
 
